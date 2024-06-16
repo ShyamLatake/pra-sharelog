@@ -1,0 +1,210 @@
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+
+*body {
+    background-color: #e5efe6;
+    color: aliceblue;
+}
+
+.photoDiv {
+    display: flex;
+    justify-content: center; /* Horizontally center the items */
+    align-items: center;
+}
+
+.main-photo {
+    width: 10vh;
+    height: 10vh;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+}
+.main-photo:hover {
+    transform: scale(1.5);
+    transition-duration: 350ms;
+}
+
+.info-person {
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+
+.info {
+    margin-bottom: 10px; 
+}
+
+.info input {
+    width: 30%;
+}
+  
+label {
+display: inline-block;
+width: 150px; 
+}
+
+.readonly {
+    background-color: #e5efe6;
+    padding-left: 8px;
+}
+
+.trial-div {
+    padding: 1%;
+    margin: 2% 0.5% ;
+    border: 2px dashed goldenrod;
+    width: 55%;
+    display: flex;
+}
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+.buy {
+    display: inline-block;
+    margin-left: 60%;
+    margin-top: 10%;
+    text-align: right;
+    padding: 10px 20px;
+    border: 2px solid goldenrod;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: goldenrod;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.buy:hover {
+    background-color: goldenrod;
+    color: white;
+}
+
+.container-of-containers{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container-cards {
+    /* padding: 1rem; */
+    margin: 1rem;
+    text-align: center;
+    border-radius: 10%;
+    height: 6rem;
+    width: 14rem;
+    font-size: 1.3rem;
+}
+
+.card1 {
+    background-color:#ccc; 
+    margin-left: 0;
+    border: 2px solid #ccc;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.card1:hover {
+    background-color: #ccc;
+    color: black;
+}
+
+.card2 {
+    background-color: rgb(206, 7, 74); 
+    margin-left: 0;
+    border: 2px solid rgb(206, 7, 74);
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: rgb(206, 7, 74);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card2:hover {
+    background-color: rgb(224, 7, 7);
+    color: black;
+}
+
+
+#theme-toggle-button {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+}
+
+/* Hide default HTML checkbox */
+#toggle {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+transition-property: all;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+transition-duration: 0.25s;
+}
+
+/* night sky background */
+#toggle:checked + svg #container {
+fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+opacity: 0;
+}
+
+#moon {
+opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+opacity: 0;
+}
+
+#stars {
+opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+opacity: 1;
+}
+  

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/178f732bae.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/test-images/logo.ico">
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/vertical-navbar.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/vertical-navbar.css" rel="stylesheet" type="text/css">
+    <% } %>
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/Base.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/Base.css" rel="stylesheet" type="text/css">
+    <% } %>
+    
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/Portfolio.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/Portfolio.css" rel="stylesheet" type="text/css">
+    <% } %>
+   
+</head>
+<body>
+    <div class="container0">
+        <%- include("partials/vertical-navbar.ejs") %>
+
+        
+        <div class="horizontal-page">
+          
+          <%- include("partials/oopari-navbar.ejs", {Title: PageTitle, Name: Name, imgSrc: imgSrc}) %>
+
+          <div class="Bhandaari">
+            
+            <div class="graphs">
+    
+              <div class="container-Account-graph">
+                <div class="container-heading">
+                  <h1 class="main-heading forPort"> &nbsp; &nbsp; &nbsp; &nbsp; Account Graph</h1>
+                </div>
+                <div id="container-spline-chart" style="height: 30rem;"></div>
+              </div>
+              <div class="container-Portfolio">
+                
+                <h1 class="Portfolio-heading">Sector Breakdown</h1>
+
+                <canvas class="container-PieChart" id="doughnut-chart" ></canvas>
+                <div class="tuttu">
+                  <div id="color-boxes"></div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="container-of-containers">
+              <div class="container-cards card1">
+                <div class="card-body">
+                  <h5 class="card-title">Net P&L</h5>
+                  <p class="card-text"> <%= PAndL %> </p>
+                </div>
+              </div>
+              <div class="container-cards card2">
+                <div class="card-body">
+                  <h5 class="card-title">Best Strategy Used</h5>
+                  <p class="card-text"><%= BestStrat %></p>
+                </div>
+              </div>
+              <div class="container-cards card3">
+                <div class="card-body">
+                  <h5 class="card-title">Total Trades Done</h5>
+                  <p class="card-text"><%= NumTrads %></p>
+                </div>
+              </div>
+              <div class="container-cards card4">
+                <div class="card-body">
+                  <h5 class="card-title">Total Brokerage</h5>
+                  <p class="card-text"><%= TotBrokerage %></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+    <script>
+        const data = <%-JSON.stringify(splineData)%>;
+        var dataPoints0 = data.map(item => ({ x: new Date(item.date), y: item.balance }));
+        console.log(dataPoints0);
+        var chart = new CanvasJS.Chart("container-spline-chart", {
+          animationEnabled: true,  
+          // title:{
+          //   text: "Account Graph",
+          //       fontColor: "#ffffff",
+          //     horizontalAlign: "center",
+          //   margin:30,
+          //   fontSize: 50,
+          //   fontFamily: "Calibri, sans-serif"
+            
+          // },
+          axisX: {
+            labelFontColor: "#bbbbbb", // Set label text color to white
+            valueFormatString: "DD"
+          },
+          axisY: {
+            // Set title text color to white
+            labelFontColor: "#bbbbbb", // Set label text color to white
+            valueFormatString: "#,##0",
+            suffix: "",
+            prefix: "",
+            tickValues: [0, 500, 1000, 5000, 10000, 25000, 30000, 35000, 40000], // Set specific tick values
+                interval: 500
+          },
+          data: [{
+            type: "splineArea",
+            color: "rgba(112, 215, 144, 0.7)",
+                markerType: "none",
+            markerSize: 5,
+              fillOpacity: 0.9 ,
+            
+            yValueFormatString: "#,##0.##",
+            dataPoints: dataPoints0
+            
+          }]
+          });
+            chart.options.backgroundColor = "#15161a"; // parrot green
+
+        chart.render();
+
+
+
+      const doughnutData = {
+          labels: ['Equity', 'Futures & Options', 'Commodity', 'Currency'],
+          data: ["<%=equity%>", "<%=fno%>", "<%=commodity%>", "<%=currency%>"], //! Get data from DB
+          backgroundColors: [ 
+              '#219ebc',
+              '#652f8d',
+              '#ffb703',
+              '#fb8500'
+          ]
+      };
+
+      const ctx = document.getElementById('doughnut-chart').getContext('2d');
+
+      const myDoughnutChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+              labels: doughnutData.labels,
+              datasets: [{
+                  label: 'My Doughnut Dataset',
+                  data: doughnutData.data,
+                  backgroundColor: doughnutData.backgroundColors,
+                  hoverOffset: 5,
+                  borderColor: "#17181a",
+
+                  
+              }]
+          },
+          options: {
+              cutout: '70%',
+              responsive: true,
+              plugins: {
+                  legend: {
+                      display: false,
+                      position: 'bottom',
+                      labels: {
+                          // Limit the number of columns for legends
+                          boxWidth: 25, // Adjust the width to control the number of columns
+                          boxHeight: 25
+                      },
+                      padding: {
+                          top: 50,
+                          right: 15,
+                          bottom: 50,
+                          left: 20,
+                      }
+                  }
+              },
+              animation: {
+                  duration: 2000 // Set duration in milliseconds (default is 1000)
+              }
+          },
+      });
+
+      const infoContainer = document.getElementById('color-boxes');
+
+      doughnutData.labels.forEach((label, index) => {
+        const infoItem = document.createElement('div');
+        infoItem.classList.add('chart-container'); // Add a class for styling
+        infoItem.style.backgroundColor = doughnutData.backgroundColors[index];
+        infoItem.innerHTML = `${label}`;
+        infoContainer.appendChild(infoItem);
+      });
+
+    </script>
+
+</body>
+</html>

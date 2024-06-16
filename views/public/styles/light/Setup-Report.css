@@ -1,0 +1,234 @@
+.container-Account-graph{
+    width: 100%;
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.image-account-graph{
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+.container-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-of-containers{
+    display: flex;
+    flex-direction: row;
+}
+#options{
+    background-color: rgb(23, 24, 25);
+    color: white;
+}
+#from-datePicker{
+    background-color: rgb(23, 24, 25);
+    color: white;
+}
+#from-datePicker::-webkit-calendar-picker-indicator {
+    filter: invert(1); 
+  }
+#to-datePicker {
+    /* Add a border */
+    color: white;
+    background-color: rgb(23, 24, 25); 
+  }
+  #to-datePicker::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert the color */
+  }
+
+  #to-datePicker::-webkit-calendar-picker-popup {
+    background-color: rgb(207, 41, 41); /* Set the background color */
+  }
+#submit-button{
+    background-color: seagreen;
+}
+
+.newStrat {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: 2px solid #3bda89;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #3bda89;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.newStrat:hover {
+    background-color: #3bda89;
+    color: white;
+}
+
+
+.custom-tooltip {
+    background-color: rgb(74, 76, 78);
+    width: max-content;
+    color: aliceblue;
+    padding: 0.7%;
+    opacity: 0.9;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.calContainer {
+    padding: 0;
+    margin: 0;
+    width: 103%;
+    overflow-x: auto;
+}
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+.Lulla {
+    text-align: left;
+}
+
+.Spacer {
+    height: 3rem;
+    display: block;
+}
+
+.Bhandaari2 {
+    padding: 8%;
+    padding-bottom: 2%;
+    margin-top: 0;
+    padding-top: 3%;
+    margin-bottom: 0px;
+}
+.container-dropdown-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dropdown-button{
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-from-button{
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-to-button{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-Account-graph{
+    width: 100%;
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.image-account-graph{
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+.Lulla {
+    text-align: left;
+}
+
+.graphs {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.container-Portfolio {
+    margin-left: 0rem;
+    border-radius: 20px;
+    border: 2px solid black;
+    
+    /* background-color: #17181a; */
+    background-color: #309b67;
+    width: 350px;
+}
+
+.Portfolio-heading {
+    color: black;
+    padding: 2rem 3.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.tuttu {
+    margin: 1rem 1rem 0;
+    
+}
+
+.hana {
+    border-collapse: collapse;
+    
+}
+.hana h4 {
+    font-size: large;
+    color: black;
+    font-weight: bold;
+    width: 150px;
+}
+.hana h3 {
+    text-align: right;
+}
+.hana tr {
+    border-bottom-width: 40px;
+    border-right-width: 10px;
+    border-color: transparent;
+}
+
+
+.taraa{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.taraa th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.taraa td {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+.taraa p {
+    margin-bottom: 3px;
+    font-size: small;
+    text-align: center;
+}
+
+.chart-container {
+    padding: 5px; /* Adjust padding values for desired margin */
+    text-align: center;
+    margin: 0.5rem;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.container-PieChart {
+    width: 100px;
+    height: 100px;
+}

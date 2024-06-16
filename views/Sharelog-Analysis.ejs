@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareLog Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/178f732bae.js" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css">
+    <link rel="icon" href="/test-images/logo.ico">
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/vertical-navbar.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/vertical-navbar.css" rel="stylesheet" type="text/css">
+    <% } %>
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/Base.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/Base.css" rel="stylesheet" type="text/css">
+    <% } %>
+    
+    <% if (theme === "dark") { %>
+      <link href="/styles/dark/Analysis.css" rel="stylesheet" type="text/css">
+    <% } else { %>
+      <link href="/styles/light/Analysis.css" rel="stylesheet" type="text/css">
+    <% } %>
+</head>
+<body>
+    <div class="container0">
+        <%- include("partials/vertical-navbar.ejs") %>
+
+        <div class="horizontal-half">
+          <%- include("partials/oopari-navbar.ejs", {Title: PageTitle, Name: Name, imgSrc: imgSrc}) %>
+            
+            <div class="container2">
+
+              <span class="Spacer"></span>
+
+              <div class="container-heading">
+                <h1 class="main-heading">ShareLog Analysis</h1>
+              </div>
+              <div class="Bhandaari2">          
+                <div class="container-of-containers">
+                  <div class="container-cards card1">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Strategy</h5>
+                      <p class="card-text"> <%= BestStrats %> </p>
+                    </div>
+                  </div>
+                  <div class="container-cards card2">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Timeslot</h5>
+                      <p class="card-text"><%= BestTimeSlot %></p>
+                    </div>
+                  </div>
+                  <div class="container-cards card3">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Day for Trading</h5>
+                      <p class="card-text"><%= BestDay %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-of-containers">
+                  <div class="container-cards card4">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Lot Size</h5>
+                      <p class="card-text"><%= BestLot %></p>
+                    </div>
+                  </div>
+                  <div class="container-cards card5">
+                    <div class="card-body">
+                      <h5 class="card-title">Biggest Profit (All-Time)</h5>
+                      <p class="card-text"><%= BigPro %></p>
+                    </div>
+                  </div>
+                  <div class="container-cards card6">
+                    <div class="card-body">
+                      <h5 class="card-title">Biggest Loss (All-Time)</h5>
+                      <p class="card-text"><%= BigLoss %></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+    /* position: relative; Ensure the body is positioned relatively */
+    padding: 2% 8%;
+    background-image: url("/test-images/4.jpg");
+}
+
+.hui {
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.huihui {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.google-signup-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #35c71f;
+    border-radius: 5px;
+    background-color: none;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .google-signup-button img {
+    width: 50px; /* Adjust size of Google logo */
+    margin-right: 20px; /* Add space between logo and text */
+  }
+
+  .google-signup-button:hover {
+    background-color: #35c71f; /* Change to desired hover color */
+  }
+
+ol {
+    margin: 0;
+}
+
+label {
+    display: block; /* Ensure each label appears on a new line */
+    font-weight: bold;
+    margin-bottom: 5px; /* Add some space between label and input */
+  }
+
+  input, select {
+    width: 80%; 
+    height: 2rem;
+    padding: 5px; /* Add padding for better visual appearance */
+    margin-bottom: 10px; /* Add some space between inputs */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }

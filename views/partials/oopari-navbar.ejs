@@ -1,0 +1,58 @@
+<div class="oopariNavbar">
+    <nav class="navbar navbar-custom">
+      <h1 class="navbar-text mr-auto hi-text">Hi, <%= Name %>!</h1>
+      <form class="form-inline">
+          <div class="input-group">
+            <form>
+              <input type="search" class="form-control search-bar" placeholder="Search by Album title, UPC, Artist" style="width: 35vh;">
+              <div class="input-group-append">
+                  <span class="input-group-text search-icon"><i class="fas fa-search"></i></span>
+              </div>
+            </form>
+          </div>
+      </form>
+      <span class="navbar-text ml-auto">
+          <span class="page-name"><%= Title%></span>
+          <a href="#">
+            <i class="notifBell fa-solid fa-bell fa-xl"  id="notification"></i>
+          </a>
+          <div class="shape" id="shapeContent" style="
+              display: none;
+              position: absolute;
+              top: 80px; /* Adjust as needed */
+              right: 85px; /* Adjust as needed */
+              background-color: rgba(49, 35, 35, 0.8); /* Adjust transparency as needed */
+              border: none;
+              border-radius: 5px;
+              padding: 10px;
+              max-width: 300px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* Clip path to create a pointy top */
+              -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* For Safari compatibility */
+          ">
+              <h3 style="font-size: large;">No New Notification</h3>
+          </div>
+
+          <img src="<%= imgSrc %>" alt="User Avatar" class="profile-icon">
+          <a href="/Profile/" >
+            <span class="username">
+              <%= Name %>
+            </span>
+          </a>
+      </span>
+    </nav>
+    <script>
+      const display_div = document.getElementById('shapeContent');
+      const noti_button = document.getElementById('notification');
+
+      // Toggle the visibility of the shape when the toggle button is clicked
+      noti_button.addEventListener('click', function() {
+          if (display_div.style.display === 'block') {
+              display_div.style.display = 'none';
+          } else {
+              display_div.style.display = 'block';
+          }
+      });
+
+    </script>
+</div>

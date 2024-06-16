@@ -1,0 +1,115 @@
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+
+.newAndSave {
+    display: flex;
+    padding: 5vh 1vh;
+}
+
+.container2 {
+    height: 79vh;
+}
+
+.newStrat {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 5px;
+    border: 2px solid #3bda89;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #3bda89;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.newStrat:hover {
+    background-color: #3bda89;
+    color: white;
+}
+
+.addNewStrat {
+    width: 50vh;
+    height: 5.5vh;
+    display: inline-block;
+    background-color: #ddd;
+}
+.addNewDesc {
+    margin-top: 10px;
+    width: 50vh;
+    height: 10vh;
+    display: inline-block;
+    background-color: #ddd;
+}
+
+.container-list-here {
+    overflow-y: auto; /*Enables inframe and its scrollbar*/
+    max-height: 35vh; 
+    font-size: x-large;
+    display: inline-flexbox;
+}
+
+.container-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropped-description{
+    display: none;
+    }  
+.dropped-description.show {
+        display: block;
+    }
+.container-content.active .dropped-description{
+    display: block;
+}
+
+.description-here {
+    padding: 20px;
+    font-size: medium;
+}
+
+.container-right {
+    margin-right: 10vh;
+}  
+.container-list-item{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer; 
+    position: relative;
+}
+.container-list-positons{
+    display: inline-block;
+}
+.container-list-positons h1{
+    font-size: x-large;
+    margin-left: 3rem;
+} 
+
+.heading-list-serial-number {
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    font-size: x-large;
+}
+
+.delButton {
+    display: inline-block;
+    margin-left: 60%;
+    padding: 10px 20px;
+    border: 2px solid #e21616;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #e21616;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.delButton:hover {
+    background-color: #e21616;
+    color: white;
+}   

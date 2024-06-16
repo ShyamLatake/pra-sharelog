@@ -1,0 +1,113 @@
+
+
+----------------------------------------------------------------------------
+
+"29 March, 2024:"
+
+%% FULFILLED THIS WEEK
+>. Theme saving
+>. Mongo Space allocated 
+>. MongoDB account linked
+>. Integration of database with user
+>. User profile section
+>. Speech saving functionality
+>. GridFS integrated with mongo
+>. Successful retrieval of speech data
+
+%% NEXT TASKS:
+>. Add text with speech, change respective architecture
+>. Buy Data APIs
+>. Generate charts
+>. Store chart data on mongo
+>. Website Hosting
+>. Session maintainence using google client
+>. QA
+
+-----------------------------------------------------------------------------
+
+"31 March, 2024:"
+
+%% FULFILLED 
+>. Welcome integrated with backend
+>. 3 separate sections for reports
+>>> On pause till server hosting
+
+%% NEXT TASKS:
+>. Add text with speech, change respective architecture
+>. Test Data APIs on 1 April
+>. Generate charts
+>. Store chart data on mongo
+>. Website Hosting
+>. Session maintainence using google client
+>. QA
+
+-----------------------------------------------------------------------------
+
+"4 April, 2024:"
+
+%% FULFILLED
+>. Dashboard authentication
+>. Home page
+>. Sign in page
+>. Sign up page
+>. Welcome page
+>. Welcome integrated with backend
+>. Overview Report page
+>. Sharelog Analysis
+>. Store chart data on mongo
+>. Session maintainence using google client
+>. Test Data APIs on 1 April
+>>> On pause till server hosting
+
+%% NEXT TASKS:
+>. Website Hosting
+>. Add text with speech, change respective architecture
+>. Generate charts
+>. QA
+
+%%TENTATIVE ACTION PLAN
+31 March, 24:
+>. Setup charts, light theme, logo 
+
+4 April, 24:
+TECHNICAL
+>. Work on light theme
+>. Logo assembly
+x. Setup charts page creation
+X. Data APIs test and Integration
+X. Charts storing
+>. Speech and text addition
+
+MANAGERIAL
+>. Payment of 10k
+>. Server hosting
+
+5 April, 24:
+X. Fill info with specific gmail account settings
+x. 'Buy Premium' page and razorpay gateway integration
+X. Google Session maintainence work
+x. Sign up pages integration
+>. End date of trial period integration
+
+6 April, 24:
+>. Speech and text save and retrieve
+>. Charts save and render
+x. Calendar Heatmap render
+>. Rest of the payment: 5k
+
+-----------------------------------------------------------------------------
+
+[Patch Update - 28th April, 2024]
+>. Updated API access token for month of April/May.
+>. Converted Unix epoch timestamps to standard timestamp for chart generation.
+>. Sent project access manager invite to Prasheek
+
+[Patch Update - 3rd May, 2024]
+>. Made changes in UI with media queries to incorporate responsiveness in website
+>. Rounded off cost prices
+>. Filtered only weekly trades to appear in dashboard (Positions taken in respective week)
+
+[Major Bug Fix - 3rd May, 2024]
+>. Fixed 10 years date delay in chart rendering due to unix epoch
+>. Reinforced Chart Data retrieval from Dhan Servers.
+>. Renamed Fando to F&O in overview report

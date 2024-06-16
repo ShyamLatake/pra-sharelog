@@ -1,0 +1,110 @@
+.container-Account-graph{
+    width: 100%;
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.image-account-graph{
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.container2 {
+    height: 79vh;
+}
+
+.custom-tooltip {
+    background-color: rgb(74, 76, 78);
+    width: max-content;
+    color: aliceblue;
+    padding: 0.7%;
+    opacity: 0.9;
+    border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+.calContainer {
+    padding: 0;
+    margin: 0;
+    width: 103%;
+    overflow-x: auto;
+}
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+.Lulla {
+    text-align: left;
+}
+
+.Spacer {
+    height: 2.5rem;
+    display: block;
+}
+
+.Bhandaari2 {
+    padding: 8%;
+    padding-bottom: 2%;
+    margin-top: 0;
+    padding-top: 3%;
+    margin-bottom: 0px;
+}
+
+.container-of-containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cards {
+    padding: 1.5rem;
+    margin: 2rem;
+    text-align: center;
+    border-radius: 10%;
+    height: 11rem;
+    width: 17rem;
+}
+
+.card1 {
+    /* background-color: #5E1675; */
+    background-image: linear-gradient(to right, seagreen, teal);
+    margin-left: 0;
+}
+.card2 {
+    /* background-color: #EE4266; */
+    background-color: #652f8d;
+}
+.card3 {
+    /* background-color: #FFD23F; */
+    background-color: #831f54;
+    margin-right: 0;
+}
+.card4 {
+    /* background-color: #337357; */
+    background-color: #4b5bb1;
+    margin-left: 0;
+    margin-top: 0;
+}
+.card5 {
+    /* background-color: #337357; */
+    background-color:#219ebc;
+    margin-top: 0;
+}
+.card6 {
+    /* background-color: #337357; */
+    background-color: #fb8500;
+    margin-top: 0;
+    margin-right: 0;
+}
+h5.card-title {
+    font-size: larger;
+}
+
+p.card-text {
+    font-size: 2.3rem;
+    padding: 1rem 0 2rem 0;
+}

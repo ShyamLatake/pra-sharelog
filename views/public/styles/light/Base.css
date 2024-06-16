@@ -1,0 +1,129 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype'); /* Regular font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    padding: 2% 2%;
+    background-color: whitesmoke;
+    color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container0{
+    display: flex;
+    /* background-color: #15161a;  */
+    background-color: #0e0e10;
+}
+.container-heading h1 {
+    /* font-family: Poppins; */
+    font-weight: 400;
+}
+
+.horizontal-half{
+    /* background-color: #15161a; */
+    background-color: #0e0e10;
+    width: 100%;
+}
+
+.oopariNavbar {
+    padding-top: 1rem;
+}
+
+.notifBell {
+    color: goldenrod;
+    margin-right: 25px
+}
+
+
+/* Navbar container */
+.hi-text {
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.navbar {
+    padding: 10px 20px;
+}
+.navbar-custom {
+    /* background-color: #15161a; */
+    background-color: #0e0e10;
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 70vh;
+    background-color: #bbb; /* Grey background */
+    color: #333; /* Dark text color */
+    transition: background-color 0.7s; /* Smooth transition */
+    height: 2.375rem;
+}
+
+.search-bar:focus {
+    background-color: white; /* White background when active */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Optional: Add a subtle shadow */
+}
+
+.search-icon {
+    font-size: 18px;
+    color: #333; /* Dark icon color */
+    position: relative;
+    height: 2.375rem;
+    background-color: rgb(129, 234, 182);
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Right section (dashboard, icons, and username) */
+.dashboard,
+.icon,
+.avatar,
+.navbar-text,
+.username {
+    margin-left: 10px;
+    color: white;
+}
+
+.page-name {
+    font-size: x-large;
+    margin-right: 4rem;
+    color: #3bda89;
+    font-weight: bold;
+}
+
+img.profile-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 100%;
+    /* margin-right: 8px; Add some spacing between the icon and the name */
+}
+
+.username {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    color: white; /* Adjust the color as needed */
+    margin-top: 0px;
+    margin-left: 0.6rem;
+}
+
+.container-heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.main-heading {
+    /* color: rgb(98, 105, 112); */
+    /* color: rgb(181, 190, 199); */
+    color: azure;
+    margin: 20px auto 0;
+}
+
+.container1{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}

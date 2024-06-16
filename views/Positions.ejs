@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/178f732bae.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="icon" href="/test-images/logo.ico">
+    <% if (theme === "dark") { %>
+        <link href="/styles/dark/vertical-navbar.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/vertical-navbar.css" rel="stylesheet" type="text/css">
+      <% } %>
+      <% if (theme === "dark") { %>
+        <link href="/styles/dark/Base.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/Base.css" rel="stylesheet" type="text/css">
+      <% } %>
+      
+      <% if (theme === "dark") { %>
+        <link href="/styles/dark/Positions.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/Positions.css" rel="stylesheet" type="text/css">
+      <% } %>
+    <script>
+        var isavailable = '<%= isavailable%>'
+        $(document).ready(function(){
+    $('.container-list-item').click(function(){
+
+        var num_pos = $(this).children('.container-num-pos')
+        if (!$(this).hasClass('active')){
+        $(this).toggleClass('active'); 
+        }
+    });
+    $('.container-num-pos').click(function(event){
+        // Prevent the click event from bubbling up to the parent container-list-item
+        event.stopPropagation();
+        
+        // Toggle the 'active' class of the parent container-list-item
+        $(this).closest('.container-list-item').toggleClass('active');
+    });
+});
+
+
+    </script>
+</head>
+<body>
+    <div class="container0">
+        
+        <%- include("partials/vertical-navbar.ejs") %>
+
+        <div class="horizontal-half">
+            <%- include("partials/oopari-navbar.ejs", {Title: PageTitle, Name: Name, imgSrc: imgSrc}) %>
+              
+              <div class="container2">
+                <div class="container-heading">
+                  <h1 class="main-heading">Current Positions</h1>
+                </div>
+                <div class="Bhandaari">
+
+                    <div class="containerjj">
+                      <% if (carouselData.length == 0) { %>
+                        <div class="nothingness">
+                            <h1>No Positions to show :( </h1>
+                        </div>
+                      <% } else { %>
+                        
+                        <div class="container-carousel">
+                          <div id="carouselExample" class="carousel slide">
+                            <% carouselData.forEach((item, index) => { %>
+                            <div class="carousel-inner">
+                                <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                                <div class="container-fetched-content">
+        
+                                  <div class="Lulla">
+                                      <% if (item.profit < 0) { %>
+                                          <h2 class="amount-heading" style="color: red;"><%= item.profit %></h2>
+                                      <% } else { %>
+                                          <h2 class="amount-heading" style="color: green;"><%= item.profit %></h2>
+                                      <% } %>
+                                      <h3 class="p-and-l-heading" style="color: antiquewhite;"> <%= item.tradingSymbol %></h3>
+                                  </div>
+                                  
+                                  <div class="amount-and-day">
+                                    <div class="amount">
+                                      
+                                      <div class="hidden-date" style="display: none;"><%= item.dateOfBuy %></div>
+                                      <div class="day-drop">
+                                            <h4 class="dropdownt day-and-date-heading" style="color: rgb(196, 237, 184);"></h4>
+                                      </div>
+                                    </div>
+                                    <div class="day-dropdown">
+                                      <h5 class="dropdown" style="color: white;"><%= item.dayOfBuy%></h5>
+                                    </div>
+                                  </div>
+                
+                                </div>
+                                
+                                <div class="container-chart">
+                                  <div class="container-candelstick-chart" id="<%=item._id%>" style="height: 400px; width: 100%;">
+                                  </div>
+                                </div>
+                                
+                                <% console.log(String(item.audioObject)); %>
+                                
+                                <% if (item.audioObject==null || item.audioObject == undefined) { %>
+        
+                                    <!--? Audio not present. Provide mic options -->
+        
+                                    <div class="container-mic-control">
+                                      <div class="container-mic-button">
+                                        <button class="mic-button" id="<%=item._id%>">
+                                          <i class="fa-solid fa-microphone-lines"></i>
+                                        </button>
+                                      </div>
+                                      <div class="container-three-lines">
+                                        <button class="three-lines" id="<%=item._id%>">
+                                          <i class="fa-solid fa-stop"></i>
+                                        </button>
+                                      </div>
+                                    </div>
+        
+                                <% } else { %>
+        
+                                    <!--? Audio already present. Provide play options -->
+        
+                                    <div class="container-audio-control">
+                                      <div class="container-audio-rewind-button">
+                                        <button class="rewind-button" id="<%=item._id%>">
+                                          <i class="fa-solid fa-rotate-left"></i>
+                                        </button>
+                                      </div>
+                                      <div class="container-audio-play-button">
+                                        <button class="play-button" id="<%=item._id%>">
+                                          <i class="fa-solid fa-play"></i></button>
+                                      </div>
+                                      <div class="container-audio-forward-button">
+                                        <button class="forward-button" id="<%=item._id%>"><i class="fa-solid fa-rotate-right"></i></button>
+                                      </div>
+                                    </div>
+        
+                                <% } %>
+                                
+                                <div class="biharKeLala">
+                                  <div class="newAndSave">
+                                    <div class="input-group neecheWala">
+                                        <form class="form-inline" action="/SaveDataForPos" method="post">
+                                          <input type="text" hidden name="posId" value="<%=item._id%>">
+                                          <input type="text" hidden name="pageName" value="/<%=PageTitle%>">
+                                          <!-- <div class="container-choose-heading">
+                                            <label for="options">Strategies</label>
+                                          </div> -->
+                                          <div class="container-choose-button">
+                                            <select name="strat" id="options">
+                                              <option name="strat" selected value="Select Strategy">Select Strategy</option>
+                                              <% Strategies.forEach((strategy, index) => { %>
+
+                                                  <% if(strategy[0] == item.strategyUsed) { %>
+                                                    <option name="strat" selected value="<%=strategy[0]%>"><%=strategy[0]%></option>
+                                                  <% } else { %>
+                                                    <option name="strat" value="<%=strategy[0]%>"><%=strategy[0]%></option>
+                                                  <% } %>
+
+                                              <% }) %>
+                                            </select>
+                                          </div>
+                                          <br>
+
+                                          <% if(item.text.length == 0) { %>
+                                            <input type="text" class="form-control addNewDesc " placeholder="Add Notes for this trade..." name="Descr">
+                                          <% } else { %>
+                                            <input type="text" class="form-control addNewDesc " placeholder="<%= item.text %>" name="Descr">
+                                          <% } %>
+
+                                          
+                                          <button type="submit" class="newStrat">Save</button>
+                                        </form>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                            <% }); %>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        </div>
+                        
+                        <audio id="audioPlayer" controls style="display: none;">
+                          <source id="audioSource" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>
+
+                    </div>
+
+                      <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      window.onload = function () {
+
+      const micButtons = document.querySelectorAll('.mic-button');
+
+      micButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            startRecording(button.id); // Pass the button ID to the startRecording function
+        });
+      });
+
+      const stopButtons = document.querySelectorAll('.three-lines');
+
+      stopButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          stopRecording(); // Pass the button ID to the startRecording function
+        });
+      });
+
+      let mediaRecorder; // Variable to store the MediaRecorder object
+      var chunks = []; // Array to store recorded audio chunks
+      let audBlob;
+      // Function to handle recording when the mic button is clicked
+
+      function startRecording(buttonId) {
+          chunks = [];
+          navigator.mediaDevices.getUserMedia({ audio: true })
+              .then(stream => {
+                  mediaRecorder = new MediaRecorder(stream);
+
+                  // Event listener for dataavailable event
+                  mediaRecorder.ondataavailable = function(e) {
+                      chunks.push(e.data);
+                  };
+
+                  // Event listener for stop event
+                  mediaRecorder.onstop = function() {
+                      const audioBlob = new Blob(chunks, { type: 'audio/wav' });
+                      const audioUrl = URL.createObjectURL(audioBlob);
+                      console.log('Recording stopped for', buttonId,'Audio URL:', audioUrl);
+                      const reader = new FileReader();
+                      reader.readAsDataURL(audioBlob);
+                      reader.onloadend = function() {
+                          const audioData = reader.result.split(',')[1]; // Extract base64-encoded audio data
+                          console.log(audioData);
+                          sendAudioToBackend(buttonId, audioData);
+                      };
+                      mediaRecorder.stop();
+                  };
+
+                  // Start recording
+                  mediaRecorder.start();
+
+                  console.log('Recording started...');
+              })
+              .catch(err => {
+                  console.error('Error accessing microphone:', err);
+              });
+      }
+
+      async function sendAudioToBackend(buttonId, audioData) {
+          try {
+              const response = await fetch('/saveAudio', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    buttonId: buttonId,
+                    audio: audioData
+                  })
+              }).then(response => {
+                  if (response.ok) {
+                      // Successful response, reload the page
+                      location.reload();
+                  } else {
+                      // Handle error responses
+                      console.error('Failed to save audio data:', response.statusText);
+                  }
+              }).catch(error => {
+                  // Handle network errors
+                  console.error('Error saving audio data:', error);
+              });
+          } catch (error) {
+              console.error('Error sending recording to backend:', error);
+          }
+      }
+
+
+      function stopRecording() {
+          if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+              mediaRecorder.stop();
+          } else {
+              console.warn('No active recording to stop.');
+          }
+      }
+
+      const playButtons = document.querySelectorAll('.play-button');
+
+      let audioPlayer, audioSource;
+
+      playButtons.forEach(button => {
+          button.addEventListener('click', async function() {
+            console.log("Request to play audio for object", button.id);
+        
+            try {
+                  const response = await fetch('/playAudio', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                        buttonId: button.id
+                      })
+                  }).then(response => {
+                        console.log(response.body);
+                        if (response.ok) {
+                            return response.blob(); // Convert response to array buffer
+                        } else {
+                            throw new Error('Failed to retrieve audio data');
+                        }
+                    })
+                    .then(blob => {
+                      audioPlayer = document.getElementById('audioPlayer');
+                      audioSource = document.getElementById('audioSource');
+                      
+                      // Create a URL from the blob
+                      const audioUrl = URL.createObjectURL(blob);
+                      
+                      // Set the audio source
+                      audioSource.src = audioUrl;
+                      audioPlayer.load(); // Load the new source
+
+                      // Play the audio
+                      audioPlayer.play();
+                    })
+                    .catch(error => {
+                        console.error('Error playing audio:', error);
+                    });
+              } catch (error) {
+                  console.error('Error sending recording to backend:', error);
+              }
+      });
+      });
+
+      const rewindButtons = document.querySelectorAll('.rewind-button');
+
+      rewindButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            console.log("Request to rewind audio for object", button.id);
+            audioPlayer.currentTime -= 5;
+        });
+      });
+
+      const forwButtons = document.querySelectorAll('.forward-button');
+
+      forwButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            console.log("Request to forw audio for object", button.id);
+            audioPlayer.currentTime += 5;
+        });
+      });
+
+
+      async function renderCHarts() {
+      console.log("Rendering");
+
+    async function fetchData(userID) {
+      var url = "/getChartData";
+      var data = {
+          userID: userID
+      };
+
+      var jsonData = JSON.stringify(data);
+
+      var options = {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: jsonData
+      };
+
+      try {
+          var response = await fetch(url, options);
+          console.log(response);
+          // Check if the response is successful
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
+          }
+
+          // Parse the JSON response
+          var responseData = await response.json();
+          // Process the JSON data received from the server
+          console.log("Data received:", responseData);
+          
+          // Return the data
+          return responseData;
+      } catch (error) {
+          // Handle any errors that occur during the request
+          console.error('There was a problem with the fetch operation:', error);
+          // Throw the error to propagate it to the caller
+          throw error;
+      }
+  }
+
+
+    let hui, averagedData, formattedData, chart, idd;
+    // const averagedData = calculateAverage(Response, 1);
+    
+
+    <% for(const thisPosition of carouselData ) { %>
+
+      // hui= document.getElementById("<%= thisPosition._id%>")
+      // console.log(hui);
+      idd = "<%= thisPosition._id%>";
+      averagedData = await fetchData(idd);
+      console.log(averagedData);
+      // console.log("Got chart data: ", averagedData);
+      // averagedData= Response;
+
+      formattedData = [];
+      for (let i = 0; i < averagedData.time.length; i++) {
+          const dataPoint = {
+              x: new Date(averagedData.time[i] * 1000), // Convert Unix timestamp to JavaScript Date object
+              y: [averagedData.open[i], averagedData.high[i], averagedData.low[i], averagedData.close[i]]
+          };
+          formattedData.push(dataPoint);
+      }
+      chart = new CanvasJS.Chart("<%= thisPosition._id%>", {
+        animationEnabled: true,
+        theme: "dark",
+        // title: {
+        //     text: "Candlestick Chart"
+        // },
+        zoomEnabled: true, 
+        zoomType: "xy",
+        zoomDirection: "y", 
+        panEnabled: true, 
+        panDirection: "xy",
+        exportEnabled: true,
+        backgroundColor: "#15161a", 
+        axisX: {
+            title: "Time",
+            titleFontColor: "white",
+            titleFontSize: 15,
+            valueFormatString: "HH:mm",
+            interval: 1,
+            intervalType: "minute",
+            labelFontColor: "#15161a",
+            labelWrap: true,
+            labelAutoFit: true,
+            crosshair: {
+              enabled: true,
+              color: "orange",
+              labelFontColor: "#F8F8F8"
+            },
+        },
+        axisY: {
+            title: "Price",
+            titleFontColor: "white",
+            titleFontSize: 15,
+            includeZero: false,
+            labelFontColor: "#cccccc",
+            position: "right",
+            includeZero: false,
+            crosshair: {
+              enabled: true,
+              color: "orange",
+              labelFontColor: "#F8F8F8"
+            }
+        },
+        toolTip: {
+          animationEnabled: true,
+          cornerRadius: 15,
+          backgroundColor: "silver",
+          // fontColor: "white"
+        },
+        // data: datat
+        data: [{
+            type: "candlestick",
+            risingColor: "#00ff00",
+            fallingColor: "#ff0000",
+            color: "#15161a",
+            dataPoints: formattedData
+        }]
+      });
+
+      chart.render();
+    <% } %>
+    }
+    
+    renderCHarts()
+    $('#carouselExample').on('slid.bs.carousel', function () {
+      renderCHarts()
+    })
+    }
+    </script>
+
+</body>
+</html>

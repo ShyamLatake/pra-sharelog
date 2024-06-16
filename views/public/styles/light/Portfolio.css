@@ -1,0 +1,115 @@
+.container-Account-graph{
+    width: 100%;
+    margin-right: 40px;
+    border-radius: 20px;
+}
+.image-account-graph{
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+
+/* .container-Elements{
+    display: flex;
+    flex-direction: column;  
+} */
+.container-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-of-containers{
+    display: flex;
+    flex-direction: row;
+}
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+.Lulla {
+    text-align: left;
+}
+
+.graphs {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.container-Portfolio {
+    margin-left: 1.5rem;
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 2rem 3.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #17181a;
+}
+
+.tuttu {
+    margin: 3rem auto 0;
+}
+
+.chart-container {
+    padding: 5px; /* Adjust padding values for desired margin */
+    text-align: center;
+    margin: 0.5rem;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.Portfolio-heading {
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.container-PieChart {
+    width: 100px;
+    height: 100px;
+}
+
+
+.container-cards {
+    padding: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 10%;
+    height: 11rem;
+    width: 17rem;
+}
+
+.card1 {
+    /* background-color: #5E1675; */
+    background-image: linear-gradient(to right, seagreen, teal);
+    margin-left: 0;
+}
+.card2 {
+    /* background-color: #EE4266; */
+    background-color: #652f8d;
+}
+.card3 {
+    /* background-color: #FFD23F; */
+    background-color: #831f54;
+}
+.card4 {
+    /* background-color: #337357; */
+    background-color: #4b5bb1;
+    margin-right: 0;
+}
+
+h5.card-title {
+    font-size: larger;
+}
+
+p.card-text {
+    font-size: 2.3rem;
+    padding: 1rem 0 2rem 0;
+}

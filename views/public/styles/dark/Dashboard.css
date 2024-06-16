@@ -1,0 +1,278 @@
+.carousel-item img {
+    width: fit-content;
+    height: 70vh;
+}
+
+.container-list{
+    /* overflow-y: auto; 
+    max-height: 61vh;  */
+    font-size: x-large;
+}
+
+.nothingness h1 {
+    text-align: center;
+    padding-top: 15%;
+    color: grey;
+    height: 60vh;
+}
+
+.container-carousel {
+    margin-top: 10px;
+}
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+
+.Lulla {
+    text-align: left;
+}
+.amount {
+    text-align: right;
+}
+.amount-and-day{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.amount{
+    display: flex;
+    justify-content: flex-start;
+    
+    flex: 1;
+}
+.day-dropdown{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.container-chart {
+    margin-top: 2rem;
+}
+
+.biharKeLala {
+    /* padding: 0 5rem; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.newAndSave {
+    display: flex;
+    padding: 5vh 1vh;
+}  
+.addNewStrat {
+width: 50vh;
+/* height: 5.5vh; */
+display: inline-block;
+/* background-color: #ddd; */
+}
+.addNewDesc {
+    margin-top: 10px;
+    width: 70vh;
+    height: 10vh;
+    display: inline-block;
+    background-color: #ddd;
+}
+
+.newStrat {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 5px;
+    border: 2px solid #3bda89;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #3bda89;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.newStrat:hover {
+    background-color: #3bda89;
+    color: white;
+}
+
+.container-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropped-description{
+    display: none;
+    }  
+.dropped-description.show {
+        display: block;
+    }
+.container-content.active .dropped-description{
+    display: block;
+}
+
+.description-here {
+    padding: 20px;
+    font-size: medium;
+}
+
+.container-right {
+    margin-right: 10vh;
+}  
+
+.container-strategies{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#options{
+    color: white;
+    background-color: rgb(23, 24, 25); 
+    padding: 0.4rem;
+    border-width: 0.2rem;
+    border-radius: 0.2rem;
+    border-color: rgb(23, 24, 25);
+    opacity: 0.7;
+}
+
+.container-audio-control{
+    display: flex;
+    margin-top: 10px;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #15161a;
+    border-radius: 4px;
+    height: 4rem;
+}
+.container-mic-control{
+    display: flex;
+    margin-top: 10px;
+   
+    justify-content: center;
+    align-items: center;
+    background-color: #15161a;
+    border-radius: 4px;
+    height: 4rem;
+}
+
+.rewind-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rewind-button i {
+    color: white;
+    font-size: 24px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .play-button i {
+    color: white;
+    font-size: 24px;
+  }
+
+  .forward-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .forward-button i {
+    color: white;
+    font-size: 24px;
+  }
+ 
+  .mic-button{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+  }
+  .three-lines{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.container-of-containers{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+.container-cards {
+    padding: 1.5rem;
+    margin: 1rem;
+    text-align: center;
+    border-radius: 10%;
+    height: 11rem;
+    width: 17rem;
+}
+
+.card1 {
+    /* background-color: #5E1675; */
+    background-image: linear-gradient(to right, seagreen, teal);
+    margin-left: 0;
+}
+.card2 {
+    /* background-color: #EE4266; */
+    background-color: #652f8d;
+}
+.card3 {
+    /* background-color: #FFD23F; */
+    background-color: #831f54;
+}
+.card4 {
+    /* background-color: #337357; */
+    background-color: #4b5bb1;
+    margin-right: 0;
+}
+
+h5.card-title {
+    font-size: larger;
+}
+
+p.card-text {
+    font-size: 2.3rem;
+    padding: 1rem 0 2rem 0;
+}

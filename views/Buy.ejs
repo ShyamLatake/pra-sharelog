@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Go Pro</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/178f732bae.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="/test-images/logo.ico">
+        <link href="/styles/light/Buy.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <section class="pricing-section">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <span class="title">Choose a Plan</span>
+                    <h2>You have <%= daysLeft%> days left for Free Trial.</h2>
+                </div>
+    
+                <div class="outer-box">
+                    <div class="row">
+                        <!-- Pricing Block -->
+                        <div class="pricing-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <div class="icon-outer"><i class="fas fa-paper-plane"></i></div>
+                                </div>
+                                <div class="price-box">
+                                    <div class="title">ShareLog Trial</div>
+                                    <h4 class="price">₹0/-</h4>
+                                </div>
+                                <ul class="features">
+                                    <li class="true">Speech notes</li>
+                                    <li class="true">Real-time charts rendering</li>
+                                    <li class="true">Setup Analysis</li>
+                                    <li class="false">Unlimited support</li>
+                                </ul>
+                                <div class="btn-box">
+                                    <a href="/Dashboard" class="theme-btn">Continue Trial for 14 days</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Block -->
+                        <div class="pricing-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <div class="icon-outer"><i class="fas fa-rocket"></i></div>
+                                </div>
+                                <div class="price-box">
+                                    <div class="title">Sharelog Premium</div>
+                                    <h4 class="price">₹199/-</h4>
+                                </div>
+                                <ul class="features">
+                                    <li class="true">Speech notes</li>
+                                    <li class="true">Real-time charts rendering</li>
+                                    <li class="true">Setup Analysis</li>
+                                    <li class="true">Unlimited support</li>
+                                </ul>
+                                <div class="btn-box" id="rzp-button1">
+                                    <a href="#" class="theme-btn">BUY plan</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // var orderId;
+
+            // var settings = {
+            //     "url": "/create/orderid",
+            //     "method": "POST",
+            //     "timeout": 0,
+            //     "headers": {
+            //         "Content-Type": "application/json"
+            //     },
+            //     "data": JSON.stringify({
+            //         "amount": "100"
+            //     }),
+            // };
+
+            // // Create order ID
+            // $.ajax(settings).done(function(response) {
+            //     orderId = response.orderId;
+            //     console.log(orderId);
+            //     $("#rzp-button1").show();
+            // });
+
+            function loadScript(src) {
+                return new Promise((resolve) => {
+                    const script = document.createElement('script')
+                    script.src = src
+                    script.onload = () => {
+                        resolve(true)
+                    }
+                    script.onerror = () => {
+                        resolve(false)
+                    }
+                    document.body.appendChild(script)
+                })
+            }
+
+            // Handle button click
+            $("#rzp-button1").click( async function(e) {
+                console.log("Click hua ji");
+
+                const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+                const additionalData = {
+                    key1: 'value1',
+                    key2: 'value2'
+                };
+                const data = await fetch('https://www.sharelog.in/razorpay', { method: 'POST' ,
+                    body: JSON.stringify({  
+                    notes: additionalData
+                })
+                }).then((t) =>
+                    t.json()
+                )
+                console.log(data)
+
+                const options = {
+                    key: 'rzp_live_02SQsUjFIPjm1R',
+                    currency: data.currency,
+                    amount: data.amount.toString(),
+                    order_id: data.id,
+                    name: 'ShareLog Premium',
+                    description: 'Thank you for nothing. Please give us some money',
+                    image: 'https://www.sharelog.in/getLogo',
+                    handler: function (response) {
+                        window.location.href= "/Dashboard"
+                    },
+                    prefill: {
+                        name,
+                        email: 'someone@gmail.com',
+                        phone_number: '9999999999',
+                        kk: "Hello"
+                    },
+                    notes: data.notes
+                }
+                const paymentObject = new window.Razorpay(options)
+                paymentObject.open()
+            });
+        });
+    </script>
+    </body>
+</html>

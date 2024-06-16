@@ -1,0 +1,220 @@
+.container0 {
+    /* height: 92vh; */
+}
+
+.Bhandaari {
+    padding: 4%;
+    padding-bottom: 2%;
+    margin-bottom: 0px;
+}
+.carousel-item img {
+    width: fit-content;
+    height: 70vh;
+}
+
+.container-list{
+    /* overflow-y: auto; 
+    max-height: 61vh;  */
+    font-size: x-large;
+}
+
+.nothingness h1 {
+    text-align: center;
+    padding-top: 15%;
+    color: grey;
+    height: 60vh;
+}
+
+.biharKeLala {
+    /* padding: 0 5rem; */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.container-audio-control{
+    display: flex;
+    margin-top: 10px;
+    
+    justify-content: center;
+    align-items: center;
+    background-color: #15161a;
+    border-radius: 4px;
+    height: 4rem;
+}
+.container-mic-control{
+    display: flex;
+    margin-top: 10px;
+   
+    justify-content: center;
+    align-items: center;
+    background-color: #15161a;
+    border-radius: 4px;
+    height: 4rem;
+}
+
+.rewind-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rewind-button i {
+    color: white;
+    font-size: 24px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .play-button i {
+    color: white;
+    font-size: 24px;
+  }
+
+  .forward-button {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .forward-button i {
+    color: white;
+    font-size: 24px;
+  }
+ 
+  .mic-button{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+  }
+  .three-lines{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+#options{
+    color: white;
+    background-color: rgb(23, 24, 25); 
+    padding: 0.4rem;
+    border-width: 0.2rem;
+    border-radius: 0.2rem;
+    border-color: rgb(23, 24, 25);
+    opacity: 0.7;
+}
+
+.newAndSave {
+    display: flex;
+    padding: 5vh 1vh;
+}  
+.addNewStrat {
+width: 50vh;
+/* height: 5.5vh; */
+display: inline-block;
+/* background-color: #ddd; */
+}
+.addNewDesc {
+    margin-top: 10px;
+    width: 70vh;
+    height: 10vh;
+    display: inline-block;
+    background-color: #ddd;
+}
+
+.newStrat {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left: 5px;
+    border: 2px solid #3bda89;
+    border-radius: 50px; /* Adjust the value to make the button more or less round */
+    background-color: transparent;
+    color: #3bda89;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.newStrat:hover {
+    background-color: #3bda89;
+    color: white;
+}
+
+.container-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .dropped-description{
+    display: none;
+    }  
+.dropped-description.show {
+        display: block;
+    }
+.container-content.active .dropped-description{
+    display: block;
+}
+
+.description-here {
+    padding: 20px;
+    font-size: medium;
+}
+
+.container-right {
+    margin-right: 10vh;
+}  
+
+.container-strategies{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container-audio-control{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.show {
+    display: block;
+}
+

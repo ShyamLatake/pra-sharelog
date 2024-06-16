@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holdings</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/test-images/logo.ico">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/178f732bae.js" crossorigin="anonymous"></script>
+    <% if (theme === "dark") { %>
+        <link href="/styles/dark/vertical-navbar.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/vertical-navbar.css" rel="stylesheet" type="text/css">
+      <% } %>
+      <% if (theme === "dark") { %>
+        <link href="/styles/dark/Base.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/Base.css" rel="stylesheet" type="text/css">
+      <% } %>
+      
+      <% if (theme === "dark") { %>
+        <link href="/styles/dark/Holdings.css" rel="stylesheet" type="text/css">
+      <% } else { %>
+        <link href="/styles/light/Holdings.css" rel="stylesheet" type="text/css">
+      <% } %>
+    <script>
+        var isavailable = '<%= isavailable%>'
+        $(document).ready(function(){
+    $('.container-list-item').click(function(){
+
+        var num_pos = $(this).children('.container-num-pos')
+        if (!$(this).hasClass('active')){
+        $(this).toggleClass('active'); 
+        }
+    });
+    $('.container-num-pos').click(function(event){
+        // Prevent the click event from bubbling up to the parent container-list-item
+        event.stopPropagation();
+        
+        // Toggle the 'active' class of the parent container-list-item
+        $(this).closest('.container-list-item').toggleClass('active');
+    });
+});
+
+
+    </script>
+</head>
+<body>
+    <div class="container0">
+        
+        <%- include("partials/vertical-navbar.ejs") %>
+
+        <div class="horizontal-half">
+            <%- include("partials/oopari-navbar.ejs", {Title: PageTitle, Name: Name, imgSrc: imgSrc}) %>
+              
+              <div class="container2">
+                <div class="container-heading">
+                  <h1 class="main-heading">Current Holdings</h1>
+                </div>
+                <div class="Bhandaari">
+                    <div class="container-list">
+                      <% if (list.length == 0) { %>
+                        <div class="nothingness">
+                            <h1>No Holdings to show :( </h1>
+                        </div>
+                      <% } else { %>
+                      <% for (var i = 0; i < list.length; i++) { %>
+                        <div class="container-list-item">
+                            <div class="container-num-pos">
+                                <h1 class="heading-list-serial-number"><%= i %></h1>
+                                <div class="container-list-positons">
+                                    <h1><%= list[i].tradingSymbol %></h1>
+                                </div>
+                            </div> 
+                            <div class="container-list-dropdown">
+                                <div class="container-strategies">
+                                    <div class="strategy">
+                                        <h1>Strategy</h1>
+                                    </div>
+                                    <div class="strategy-dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dropdown button
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li>Action</li>
+                                                <li>Another action</li>
+                                                <li>Something else here</li>
+                                            </ul>
+                                    </div>
+                                </div>
+                                <div class="container-audio-controller">
+                                   <%- include("partials/recorder.ejs") %>
+                                </div>
+                            </div>                   
+                        </div>
+                        <% } %>
+                      <% } %>
+                  </div>
+    
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
