@@ -3248,7 +3248,7 @@ function getAllPositions() {
             method: 'GET',
             url: 'https://api.dhan.co/positions',
             headers: {
-                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ',
+                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g',
                 Accept: 'application/json'
             }
         };
@@ -3275,7 +3275,7 @@ function getTradeHistory(from_date, to_date) {
             method: 'GET',
             url: `https://api.dhan.co/tradeHistory/${fromDate}/${toDate}/${page}`,
             headers: {
-                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ',
+                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g',
                 Accept: 'application/json'
             }
         };
@@ -3394,7 +3394,7 @@ async function getChartData(securityID, exchangeSeg, instru) {
             method: 'POST',
             url: 'https://api.dhan.co/charts/intraday',
             headers: {
-                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ',
+                'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g',
                 'Content-Type': 'application/json',
                 Accept: 'application/json'
             },
@@ -3429,7 +3429,7 @@ async function getCurBalance() {
         method: 'GET',
         url: 'https://api.dhan.co/fundlimit',
         headers: {
-          'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ',
+          'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g',
           Accept: 'application/json'
         }
       };
@@ -3494,7 +3494,7 @@ app.get("/Holdings", (req, res)=>{
         const options = {
             method: 'GET',
             url: 'https://api.dhan.co/holdings',
-            headers: {'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ', Accept: 'application/json'}
+            headers: {'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g', Accept: 'application/json'}
         };
 
         
@@ -3597,7 +3597,7 @@ app.get("/Overview-Report", (req, res)=>{
             method: 'GET',
             url: 'https://api.dhan.co/fundlimit',
             headers: {
-              'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzIzMjc2MTEwLCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.fF9_mFgdA5kTM9wYaLAudjcJwjUEolWnBruhTrQ_6ugqq5ctaEO5CPmTI59U02G99bsuGaCwn3BduuWQoj5rpQ',
+              'access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzI2MTQwMTI2LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwMDY4NzY5NyJ9.riJuUmTKzWgINb625phYENWsRxn-HuZGocpHDqkdwsgzh5qKbG25CsUpFdwFfThF27YtUMusB8OYS40qoCrh2g',
               Accept: 'application/json'
             }
           };
