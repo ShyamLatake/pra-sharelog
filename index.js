@@ -217,7 +217,7 @@ passport.deserializeUser(function(id, done) {
 passport.use("google", new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://www.sharelog.in/auth/google/ShareLog",
+    callbackURL: "https://pra-sharelog.onrender.com/auth/google/ShareLog",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
   },
   async function(accessToken, refreshToken, profile, cb) {
